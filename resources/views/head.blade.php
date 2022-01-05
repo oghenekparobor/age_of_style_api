@@ -5,11 +5,11 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="img/fav.png">
     <title>AOS - Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('fonts/icomoon/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/overlay-scroll/OverlayScrollbars.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/daterange/daterange.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('fonts/icomoon/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/overlay-scroll/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/daterange/daterange.css') }}">
 
 </head>
