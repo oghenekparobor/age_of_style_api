@@ -20,7 +20,7 @@
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
                                                     <div class="form-label">Voting starts ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->created_at))) }})</div>
-                                                    <div class="input-group control-dark"><input type="text"
+                                                    <div class="input-group control-dark"><input type="text" placeholder="DD/MM/YYYY H:S A"
                                                             class="form-control datepicker-time" name="from"><span
                                                             class="input-group-text"><i
                                                                 class="icon-date_range"></i></span>
@@ -30,7 +30,7 @@
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
                                                     <div class="form-label">Voting ends ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->updated_at))) }})</div>
-                                                    <div class="input-group control-dark"><input type="text"
+                                                    <div class="input-group control-dark"><input type="text" placeholder="DD/MM/YYYY H:S A"
                                                             class="form-control datepicker-time" name="to"><span
                                                             class="input-group-text"><i
                                                                 class="icon-date_range"></i></span>
