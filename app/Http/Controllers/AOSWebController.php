@@ -311,8 +311,8 @@ class AOSWebController extends Controller
 
             $settings = VoteSettings::first();
 
-            $settings->vote_starts = $fromTimestamp;
-            $settings->vote_end = $toTimestamp;
+            $settings->created_at = $fromTimestamp;
+            $settings->updated_at = $toTimestamp;
 
             $settings->save();
 
