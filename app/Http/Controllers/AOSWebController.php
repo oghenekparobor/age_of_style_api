@@ -10,6 +10,7 @@ use App\Models\VoteSettings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use DateTime;
 
 class AOSWebController extends Controller
 {
@@ -278,11 +279,10 @@ class AOSWebController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function settings(Request $request)
+    public function settings()
     {
         if (Auth::check()) {
             $settings = VoteSettings::first();
-
 
             return view('settings')->with([
                 'user' => User::find(Auth::id()),
@@ -299,9 +299,23 @@ class AOSWebController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function saveSettings()
+    public function saveSettings(Request $request)
     {
         if (Auth::check()) {
+
+            $ft = DateTime::createFromFormat("d/m/Y H:i A", $request->from);
+            $fromTimestamp = $ft->getTimestamp();
+
+            $tt = DateTime::createFromFormat("d/m/Y H:i A", $request->to);
+            $toTimestamp = $tt->getTimestamp();
+
+            $settings = VoteSettings::first();
+
+            $settings->vote_starts = $fromTimestamp;
+            $settings->vote_end = $toTimestamp;
+
+            $settings->save();
+
             return redirect()->back()->with([
                 'user' => User::find(Auth::id()),
             ]);

@@ -14,14 +14,14 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card gradient-dark-grey">
                                 <div class="card-body">
-                                    <form>
+                                    <form action="/settings/save" method="POST" id="form">
+                                        @csrf
                                         <div class="row gutters">
-
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
-                                                    <div class="form-label">Datepicker Time</div>
+                                                    <div class="form-label">Voting starts</div>
                                                     <div class="input-group control-dark"><input type="text"
-                                                            class="form-control datepicker-time"><span
+                                                            class="form-control datepicker-time" name="from"><span
                                                             class="input-group-text"><i
                                                                 class="icon-date_range"></i></span>
                                                     </div>
@@ -29,16 +29,16 @@
                                             </div>
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
-                                                    <div class="form-label">Datepicker Time</div>
+                                                    <div class="form-label">Voting ends</div>
                                                     <div class="input-group control-dark"><input type="text"
-                                                            class="form-control datepicker-time"><span
+                                                            class="form-control datepicker-time" name="to"><span
                                                             class="input-group-text"><i
                                                                 class="icon-date_range"></i></span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <button form="form" type="submit" class="btn btn-success">Save
+                                                <button type="submit" form="form" type="submit" class="btn btn-success">Save
                                                     Settings</button>
                                             </div>
                                     </form>

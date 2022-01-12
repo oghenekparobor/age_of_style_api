@@ -32,7 +32,7 @@ Route::get('/category/remove/{id}',[AOSWebController::class, 'removeCategory']);
 Route::get('/sub/category/remove/{id}',[AOSWebController::class, 'removeSubCategory']);
 
 Route::get('/settings',[AOSWebController::class, 'settings']);
-Route::post('/settings',[AOSWebController::class, 'saveSettings']);
+Route::post('/settings/save',[AOSWebController::class, 'saveSettings']);
 
 
 
