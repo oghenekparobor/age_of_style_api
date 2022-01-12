@@ -19,7 +19,7 @@
                                         <div class="row gutters">
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
-                                                    <div class="form-label">Voting starts</div>
+                                                    <div class="form-label">Voting starts ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->created_at))) }})</div>
                                                     <div class="input-group control-dark"><input type="text"
                                                             class="form-control datepicker-time" name="from"><span
                                                             class="input-group-text"><i
@@ -29,7 +29,7 @@
                                             </div>
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
-                                                    <div class="form-label">Voting ends</div>
+                                                    <div class="form-label">Voting ends ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->updated_at))) }})</div>
                                                     <div class="input-group control-dark"><input type="text"
                                                             class="form-control datepicker-time" name="to"><span
                                                             class="input-group-text"><i
