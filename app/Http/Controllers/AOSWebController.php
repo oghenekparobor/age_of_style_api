@@ -311,8 +311,10 @@ class AOSWebController extends Controller
 
             $settings = VoteSettings::first();
 
-            $settings->created_at = $fromTimestamp;
-            $settings->updated_at = $toTimestamp;
+            if ($request->has('from'))
+                $settings->created_at = $fromTimestamp;
+            if ($request->has('to'))
+                $settings->updated_at = $toTimestamp;
 
             $settings->save();
 
