@@ -203,11 +203,21 @@ class AOSWebController extends Controller
     {
         if (Auth::check()) {
             $response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+            
+            $ft = DateTime::createFromFormat("d/m/Y H:i A", $request->from);
+            $fromTimestamp = $ft->getTimestamp();
+
+            $tt = DateTime::createFromFormat("d/m/Y H:i A", $request->to);
+            $toTimestamp = $tt->getTimestamp();
 
             $cat = new Category();
 
             $cat->photo = $response;
             $cat->category = $request->cat;
+            if ($request->has('from'))
+                $cat->created_at = $fromTimestamp;
+            if ($request->has('to'))
+                $cat->updated_at = $toTimestamp;
 
             $cat->save();
 
@@ -299,7 +309,7 @@ class AOSWebController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function saveSettings(Request $request)
+    public function saveSettings(Request $request, $id)
     {
         if (Auth::check()) {
 
@@ -309,7 +319,7 @@ class AOSWebController extends Controller
             $tt = DateTime::createFromFormat("d/m/Y H:i A", $request->to);
             $toTimestamp = $tt->getTimestamp();
 
-            $settings = VoteSettings::first();
+            $settings = Category::find($id);
 
             if ($request->has('from'))
                 $settings->created_at = $fromTimestamp;

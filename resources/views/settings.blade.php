@@ -19,8 +19,11 @@
                                         <div class="row gutters">
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
-                                                    <div class="form-label">Voting starts ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->created_at))) }})</div>
-                                                    <div class="input-group control-dark"><input type="text" placeholder="DD/MM/YYYY H:S A"
+                                                    <div class="form-label">Voting starts
+                                                        ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->created_at))) }})
+                                                    </div>
+                                                    <div class="input-group control-dark"><input type="text"
+                                                            placeholder="DD/MM/YYYY H:S A"
                                                             class="form-control datepicker-time" name="from"><span
                                                             class="input-group-text"><i
                                                                 class="icon-date_range"></i></span>
@@ -29,8 +32,11 @@
                                             </div>
                                             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <div class="mb-3">
-                                                    <div class="form-label">Voting ends ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->updated_at))) }})</div>
-                                                    <div class="input-group control-dark"><input type="text" placeholder="DD/MM/YYYY H:S A"
+                                                    <div class="form-label">Voting ends
+                                                        ({{ date('D, d M Y. h:i a', strtotime('+1 hour', strtotime($settings->updated_at))) }})
+                                                    </div>
+                                                    <div class="input-group control-dark"><input type="text"
+                                                            placeholder="DD/MM/YYYY H:S A"
                                                             class="form-control datepicker-time" name="to"><span
                                                             class="input-group-text"><i
                                                                 class="icon-date_range"></i></span>
@@ -38,7 +44,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <button type="submit" form="form" type="submit" class="btn btn-success">Save
+                                                <button type="submit" form="form" type="submit"
+                                                    class="btn btn-success">Save
                                                     Settings</button>
                                             </div>
                                     </form>

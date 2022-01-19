@@ -18,8 +18,8 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="/settings"><i class="icon-settings gradient-green"></i><span
-                            class="menu-text"></span></a></li>
+                {{-- <li><a href="/settings"><i class="icon-settings gradient-green"></i><span
+                            class="menu-text"></span></a></li> --}}
 
                 <li class=""><a href="/logout"><i class="icon-lock_outline gradient-violet"></i><span
                             class="menu-text"></span></a></li>
