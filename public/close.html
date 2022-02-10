@@ -5,13 +5,14 @@
 </head>
 
 <body>
-    <h1>Close this window</h1>
+    <h1>Your vote has been placed will be processed</h1>
+    <button onclick="closeW()"> Close Window</button>
 </body>
 
 <script>
-    $(window).on('load', function() {
+    function closeW() {
         window.top.close();
-    })
+    }
 </script>
 
 </html>
