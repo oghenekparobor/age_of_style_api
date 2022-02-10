@@ -18,6 +18,7 @@ class CreateVotersTable extends Migration
             $table->string('voted');
             $table->string('reference');
             $table->string('how_many');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

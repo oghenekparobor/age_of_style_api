@@ -21,3 +21,4 @@ Route::get('/settings', [AOSController::class, 'setting']);
 Route::get('/contestants', [AOSController::class, 'contestants']);
 Route::post('/contestant/vote', [AOSController::class, 'vote']);
 Route::post('/voters/save', [AOSController::class, 'saveVoters']);
+Route::get('/voters/process', [AOSController::class, 'processVote']);
