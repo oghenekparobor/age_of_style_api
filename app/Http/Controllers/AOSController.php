@@ -45,7 +45,10 @@ class AOSController extends Controller
 
     public function contestants()
     {
-        $data = Contestants::all();
+        $data = Contestants::join('categories', 'contestants.category_id', '=', 'categories.id')
+            ->join('sub_categories', 'contestants.sub_category_id', '=', 'sub_categories.id')
+            ->select('contestants.*', 'categories.category', 'sub_categories.sub_category')
+            ->get();
 
         return ([
             'status' => 'success',
@@ -68,7 +71,7 @@ class AOSController extends Controller
 
     public function saveVoters(Request $request)
     {
-        $vote =  new Voters();
+        $vote = new Voters();
 
         $vote->voted = $request->voted;
         $vote->reference = $request->reference;
